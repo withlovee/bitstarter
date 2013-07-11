@@ -3,8 +3,9 @@ var sys=require("sys"), fs=require("fs");
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  var text = fs.readFileSync('index.html','url8');
- 
+  var text = fs.readFileSync('index.html','url8').toString();
+  //var buffer = new Buffer(text, "utf-8");
+
   response.send(text);
 });
 
